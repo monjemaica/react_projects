@@ -14,10 +14,10 @@ export const ErrorModal = (props) => {
             <Card className={classname.modal}>
 
                 <div className={classname.header}>
-                    <h2>Invalid input</h2>
+                    <h2>{props.err.title}</h2>
                 </div>
                 <div className={classname.content}>
-                    <p>{props.msg}</p>
+                    <p>{props.err.message}</p>
                 </div>
                 <div className={classname.actions}>
                     <Button onClick={closeModalHandler}>Okay</Button>

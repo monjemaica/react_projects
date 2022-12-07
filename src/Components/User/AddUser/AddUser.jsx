@@ -17,11 +17,17 @@ export const AddUser = (props) => {
       age_fld
     }
 
-    if(data.un_fld.trim().length === 0 || data.age_fld.trim().length === 0){
-      setMessage("Please enter a valid name and age (non-empty values.)")
+    if(un_fld.trim().length === 0 || age_fld.trim().length === 0){
+      setMessage({
+        title:"Invalid Input",
+        message:"Please enter a valid name and age (non-empty values.)"
+      })
       setIsValid(false);
-    }else if(parseInt(data.age_fld) < 0){
-      setMessage("Please enter a valid age (>0).")
+    }else if(+age_fld < 1){ // add + to ensure it's a number
+      setMessage({
+        title:"Invalid Age",
+        message:"Please enter a valid age (>0)."
+      })
       setIsValid(false);
     }else{
       props.onAddUser(data);
@@ -48,7 +54,7 @@ export const AddUser = (props) => {
           <Button type='submit'>Add User</Button>
         </form>
       </Card>
-     {!isValid && <ErrorModal msg={message} onClose={setIsValid}/>}
+     {!isValid && <ErrorModal err={message} onClose={setIsValid}/>}
     </>
   )
 }

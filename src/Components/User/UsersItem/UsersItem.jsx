@@ -4,7 +4,7 @@ export const UsersItem = (props) => {
     return (
         <ul>
             {props.data.map((e) =>
-                <li>
+                <li key={e.id}>
                     {e.un_fld} ( {e.age_fld} year old )
                 </li>
             )}
