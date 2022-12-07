@@ -3,7 +3,11 @@ import classname from './ErrorModal.module.css';
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
 
-export const ErrorModal = () => {
+export const ErrorModal = (props) => {
+
+    const closeModalHandler = (e) => {
+         props.onClose(true);
+    };
 
     return (
         <div className={classname.backdrop}>
@@ -13,10 +17,10 @@ export const ErrorModal = () => {
                     <h2>Invalid input</h2>
                 </div>
                 <div className={classname.content}>
-                    <p>Please enter a valid age</p>
+                    <p>{props.msg}</p>
                 </div>
                 <div className={classname.actions}>
-                    <Button>Okay</Button>
+                    <Button onClick={closeModalHandler}>Okay</Button>
                 </div>
             </Card>
         </div>

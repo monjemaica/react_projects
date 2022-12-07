@@ -48,7 +48,7 @@ export const AddUser = (props) => {
           <Button type='submit'>Add User</Button>
         </form>
       </Card>
-     {!isValid && <ErrorModal msg={message} />}
+     {!isValid && <ErrorModal msg={message} onClose={setIsValid}/>}
     </>
   )
 }
