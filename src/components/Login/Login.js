@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/Button/Button';
+import AuthContext from '../../store/auth-context';
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState('');
@@ -23,7 +24,8 @@ const Login = (props) => {
     }
   
   }, [enteredEmail, enteredPassword])
-  
+
+  const authCtx = useContext(AuthContext);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
@@ -47,7 +49,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(enteredEmail, enteredPassword);
+    authCtx.onLogin(enteredEmail, enteredPassword);
   };
 
   return (
