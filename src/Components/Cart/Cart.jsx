@@ -15,7 +15,7 @@ export const Cart = (props) => {
                 <span>$0.00</span>
             </div>
             <div className={classes.actions}>
-                <button className={classes["button--alt"]} onClick={props.isClosed}>Cancel</button>
+                <button className={classes["button--alt"]} onClick={props.onClosedModel}>Cancel</button>
                 <button className={classes.button}>Order</button>
             </div>
         </Modal>

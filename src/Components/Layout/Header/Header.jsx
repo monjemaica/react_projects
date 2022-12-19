@@ -8,7 +8,7 @@ export const Header = (props) => {
         <>
             <nav className={classes.header}>
                 <h1>ReactMeals</h1>
-                <HeaderCartButton isClosed={props.isClosed}/>
+                <HeaderCartButton onShowModel={props.onShowModel}/>
             </nav>
             <div className={classes["main-image"]}>
                 <img src="../assets/background.jpg" alt="" />
