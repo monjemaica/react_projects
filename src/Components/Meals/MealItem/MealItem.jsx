@@ -15,7 +15,7 @@ export const MealItem = (props) => {
                 </div>
             </span>
             <span>
-                <MealItemForm></MealItemForm>
+                <MealItemForm id = {props.id} />
             </span>
         </div>
     )

@@ -1,14 +1,16 @@
-import { MealsSummary } from "./Components/Meals/MealsSummary/MealsSummary";
 import { Header } from "./Components/Layout/Header/Header";
-import { AvailableMeals } from "./Components/Meals/AvailableMeals/AvailableMeals";
+import { Meals } from "./Components/Meals/Meals";
+import { Cart } from "./Components/Cart/Cart"
 
 function App() {
   return (
-    <div>
+    <>
+      <Cart />
       <Header />
-      <MealsSummary />
-      <AvailableMeals />
-    </div>
+      <main>
+        <Meals />
+      </main>
+    </>
   );
 }
 
