@@ -37,6 +37,7 @@ export const AvailableMeals = () => {
                 {DUMMY_MEALS.map((e) =>
                     <MealItem
                         key={e.id}
+                        id = {e.id}
                         name={e.name}
                         desc={e.description}
                         price= {e.price}
