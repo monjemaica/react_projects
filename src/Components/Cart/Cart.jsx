@@ -1,22 +1,28 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import classes from './Cart.module.css'
 import { CartItem } from './CartItem/CartItem'
 import Modal from '../UI/Modal/Modal'
 
+import { CartContext } from '../../data/cart-context'
+
 export const Cart = (props) => {
+    const cartCtx = useContext(CartContext);
 
-
+    const totalAmount = `$${cartCtx.totalAmount.toFixed(2)}`;
+    const hasItems = cartCtx.items.length > 0;
     return (
 
         <Modal>
-            <CartItem />
+            <div className={classes['cart-items']}>
+                <CartItem ctx={cartCtx} />
+            </div>
             <div className={classes.total}>
                 <span>Total Amount</span>
-                <span>$0.00</span>
+                <span>{totalAmount}</span>
             </div>
             <div className={classes.actions}>
                 <button className={classes["button--alt"]} onClick={props.onClosedModel}>Cancel</button>
-                <button className={classes.button}>Order</button>
+                {hasItems && <button className={classes.button}>Order</button>}
             </div>
         </Modal>
 

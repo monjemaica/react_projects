@@ -23,7 +23,7 @@ export const MealItem = (props) => {
                     {props.desc}
                 </div>
                 <div className={classes.price}>
-                    ${price}
+                    {price}
                 </div>
             </div>
             <div>
