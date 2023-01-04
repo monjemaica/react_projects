@@ -3,6 +3,9 @@ import classes from './CartItem.module.css'
 
 export const CartItem = (props) => {
 
+    const cartItemRemoveHandler = id => {};
+    const cartItemAddHander = item => {};
+
     return (
         <>
             {
@@ -17,8 +20,8 @@ export const CartItem = (props) => {
                             </div>
                         </div>
                         <div className={classes.actions}>
-                            <button onClick={e.onRemove}>-</button>
-                            <button onClick={e.onAdd}>+</button>
+                            <button onClick={cartItemRemoveHandler.bind(null, e.id)}>-</button>
+                            <button onClick={cartItemAddHander.bind(null, e)}>+</button>
                         </div>
                     </li>
 
