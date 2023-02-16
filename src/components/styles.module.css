@@ -1,0 +1,8 @@
+.icon { 
+    color: #dc3545;
+}
+
+.icon :hover{
+    color: #c82333;
+    border-color: #bd2130;
+}
