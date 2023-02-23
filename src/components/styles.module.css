@@ -6,3 +6,8 @@
     color: #c82333;
     border-color: #bd2130;
 }
+
+
+.listgroup list-group-item :hover{
+    color: #c82333;
+}
